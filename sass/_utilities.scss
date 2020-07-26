@@ -1,0 +1,39 @@
+// center inline item inside a block
+.u-center-text { text-align: center !important; }
+
+// center block item inside a block
+.u-center-block { margin: 0 auto !important; }
+
+// margin-bottom small 2rem
+.u-margin-bottom-s { margin-bottom: 1.5rem !important; }
+
+// margin-bottom medium 4rem
+.u-margin-bottom-m { 
+   margin-bottom: 4rem !important;
+
+   @include respond(tab-port) {
+      margin-bottom: 3rem !important;
+   }
+}
+
+// margin-bottom large 8rem
+.u-margin-bottom-l { 
+   margin-bottom: 8rem !important;
+
+   @include respond(tab-port) {
+      margin-bottom: 5rem !important;
+   }
+}
+
+// margin-top medium 2rem use:1
+.u-margin-top-s { margin-top: 2rem !important; }
+
+// margin-top medium 4rem
+.u-margin-top-m { margin-top: 4rem !important; }
+
+// margin-top large 8rem
+.u-margin-top-l { margin-top: 8rem !important; }
+
+// margin-top xlarge 10rem
+.u-margin-top-xl { margin-top: 10rem !important; }
+

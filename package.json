@@ -1,0 +1,31 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio page",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass ./sass/main.scss ./css/style.css -w",
+    "live": "live-server",
+    "start": "npm-run-all --parallel live watch:sass",
+    "compile:sass": "node-sass ./sass/main.scss ./css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" ./css/style.comp.css -o ./css/style.prefix.css",
+    "compress:css": "node-sass ./css/style.prefix.css ./css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/initialsky0/my-portfolio.git"
+  },
+  "author": "initialsky0/Dong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/initialsky0/my-portfolio/issues"
+  },
+  "homepage": "https://github.com/initialsky0/my-portfolio#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.5",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.1"
+  }
+}

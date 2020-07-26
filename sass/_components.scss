@@ -1,0 +1,53 @@
+// Buttons ////////////////////////
+.btn{
+   &,
+   &:link,
+   &:visited {
+      display: inline-block;
+      font-size: $default-font-size;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      border-radius: 10rem;
+      transition: all .25s ease;
+      backface-visibility: hidden;
+      position: relative;
+      border: none;
+      cursor: pointer;
+   }
+
+   &:hover {
+      transform: translateY(-.3rem);
+      box-shadow: 0 1rem 1.6rem rgba($color-black, .2);
+
+      &::after {
+         transform: scaleX(1.2) scaleY(1.5);
+         opacity: 0;
+      }
+   }
+
+   &:active {
+      outline: none;
+      transform: translateY(.1rem);
+      box-shadow: 0 .5rem .8rem rgba($color-black, .2);
+   }
+   &::after {
+      // Creating effect
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .3s ease-out;
+   }
+
+   &--main {
+      background-color: rgba($color-primary-dark, .8);
+      color: $color-white;
+      &::after { background-image: linear-gradient(to right, rgba($color-secondary-light, .5), rgba($color-secondary-dark, .5)); }
+   }
+}

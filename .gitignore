@@ -1,0 +1,10 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Minified files for deployment
+/gh-pages
+
+# npm modules
+/node_modules
+
+# css testing file
+/test_code
