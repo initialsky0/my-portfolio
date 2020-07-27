@@ -14,6 +14,7 @@
 
 .h-secondary {
    display: inline-block;
+   max-width: $sec-default-width;
    width: 60vw;
    text-transform: uppercase;
    font-size: 3.5rem;

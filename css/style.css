@@ -52,6 +52,7 @@ body {
 
 .h-secondary {
   display: inline-block;
+  max-width: 114rem;
   width: 60vw;
   text-transform: uppercase;
   font-size: 3.5rem;
@@ -86,7 +87,7 @@ p {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 1.6rem rgba(0, 0, 0, 0.2); }
   .btn:hover::after {
-    transform: scaleX(1.2) scaleY(1.5);
+    transform: scaleX(1.3) scaleY(1.6);
     opacity: 0; }
 
 .btn:active {
@@ -111,6 +112,45 @@ p {
   color: #f0f0f0; }
   .btn--main::after {
     background-image: linear-gradient(to right, rgba(255, 128, 118, 0.5), rgba(233, 58, 44, 0.5)); }
+
+.gallery {
+  position: relative;
+  flex: 0 0 55%;
+  height: 0; }
+  .gallery > * {
+    transition: all .3s ease-out; }
+  .gallery__img--1 {
+    width: 50%;
+    position: absolute;
+    top: 3rem;
+    left: 4.5rem;
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.15); }
+    .gallery__img--1:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0.6rem 4rem rgba(0, 0, 0, 0.3);
+      z-index: 1; }
+  .gallery__img--2 {
+    width: 50%;
+    position: absolute;
+    top: 6rem;
+    right: -2rem;
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2); }
+    .gallery__img--2:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0.6rem 5rem rgba(0, 0, 0, 0.4);
+      z-index: 1; }
+  .gallery__img--3 {
+    width: 55%;
+    position: absolute;
+    top: 20rem;
+    left: 15rem;
+    box-shadow: 0 0.3rem 4rem rgba(0, 0, 0, 0.3); }
+    .gallery__img--3:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0.6rem 5rem rgba(0, 0, 0, 0.5);
+      z-index: 1; }
+  .gallery:hover *:not(:hover) {
+    transform: scale(0.9); }
 
 .u-center-text {
   text-align: center !important; }
@@ -171,11 +211,17 @@ p {
 .sec-aboutme {
   max-width: 114rem;
   margin: 0 auto;
-  text-align: center;
-  height: 50vh; }
+  text-align: center; }
 
 .aboutme-content {
   padding: 1rem 4rem;
+  margin-top: -1rem;
   text-align: left;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, 1fr)); }
+  display: flex;
+  height: 45rem; }
+  .aboutme-content__text {
+    padding: 3rem;
+    align-self: center; }
+
+.sec-works {
+  text-align: center; }

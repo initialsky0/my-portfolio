@@ -32,17 +32,28 @@
 }
 
 
-///////// Header section ////////
+///////// About Me section ////////
 .sec-aboutme {
    max-width: $sec-default-width;
    margin: 0 auto;
    text-align: center;
-   height: 50vh;
 }
 
 .aboutme-content {
    padding: 1rem 4rem;
+   margin-top: -1rem;
    text-align: left;
-   display: grid;
-   grid-template-columns: repeat(2, minmax(min-content, 1fr));
+   display: flex;
+   height: 45rem;
+
+   &__text {
+      padding: 3rem;
+      align-self: center;
+   }
+}
+
+///////// About Me section ////////
+
+.sec-works {
+   text-align: center;
 }
