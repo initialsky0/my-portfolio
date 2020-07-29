@@ -77,15 +77,14 @@ p {
   font-size: 1.5rem; }
 
 @keyframes elasticalTouch {
-  10% {
-    transform: scale(0.85, 1.05);
-    background-color: #E93A2C; }
-  75% {
-    transform: scale(1.2, 0.95);
-    background-color: #FF8076; }
+  20% {
+    transform: scale(0.8); }
+  60% {
+    transform: scale(1); }
+  80% {
+    transform: scale(1.2); }
   100% {
-    transform: scale(1);
-    background-color: #FD5F53; } }
+    transform: scale(1); } }
 
 .btn, .btn:link, .btn:visited {
   display: inline-block;
@@ -135,22 +134,15 @@ p {
   font-size: 1.6rem;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1rem 3rem;
-  border-radius: 5rem;
-  color: #ececec;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
   backface-visibility: hidden;
   border: none;
   cursor: pointer;
-  transition: transform .2s, box-shadow .2s; }
+  opacity: 0; }
 
 .cta-btn:hover {
-  animation: elasticalTouch 0.7s cubic-bezier(0.99, -0.09, 0.55, 1.2);
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2); }
-
-.cta-btn:active {
-  outline: none;
-  transform: translateY(0.3rem);
-  box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.25); }
+  opacity: 0; }
 
 .cta-btn--red {
   background-color: #FD5F53; }

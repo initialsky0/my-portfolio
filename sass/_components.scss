@@ -52,12 +52,45 @@
    }
 }
 
+.cta-btn {
+   &,
+   &:link,
+   &:visited {
+      display: inline-block;
+      font-size: $default-font-size;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 3rem;
+      border-radius: 5rem;
+      color: $font-tertiary;
+      backface-visibility: hidden;
+      border: none;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+   }
+
+   &:hover {
+      animation: elasticalTouch .7s cubic-bezier(.99,-0.09,.55,1.2);
+      box-shadow: 0 1rem 1.5rem rgba($color-black, .2);
+   }
+
+   &:active {
+      outline: none;
+      transform: translateY(.3rem);
+      box-shadow: 0 .5rem .6rem rgba($color-black, .25);
+   }
+
+   &--red {
+      background-color: $color-secondary;
+   }
+}
+
 
 // Gallery ////////////////////////
 .gallery {
    position: relative;
    flex: 0 0 55%;
-   // height: 0 to make gallery section cover by image only, meanly used for effect
+   // height: 0 to make gallery section cover by image only, mainly used for hover effect
    height: 0;
 
    & > * { transition: all .3s ease-out; }
@@ -112,3 +145,21 @@
 // Card ////////////////////////
 
 
+.card {
+   display: flex;
+   align-content: center;
+   justify-content: center;
+
+   &__s1,
+   &__s2 {
+      padding: 2rem;
+      box-shadow: 0 1.5rem 2rem rgba($color-black, .15);
+      flex: 0 1 30%;
+   }
+
+   &__description {
+      padding: 2.5rem;
+      padding-right: 1.5rem;
+      text-align: left;
+   }
+}

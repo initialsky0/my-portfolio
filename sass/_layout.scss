@@ -55,5 +55,8 @@
 ///////// About Me section ////////
 
 .sec-works {
+   width: $sec-default-width;
+   margin: 0 auto;
    text-align: center;
+   padding: 5rem;
 }

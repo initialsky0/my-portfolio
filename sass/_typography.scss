@@ -26,6 +26,13 @@
    @include gradient-font(linear-gradient(to right, rgba($color-primary, 1), rgba($color-secondary, 1)))
 }
 
+.h-tertiary {
+   display: inline-block;
+   font-size: 2.5rem;
+   text-transform: uppercase;
+   font-weight: 400;
+}
+
 p {
    font-size: 1.5rem;
 }
