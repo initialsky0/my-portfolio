@@ -207,6 +207,42 @@ p {
     padding-right: 1.5rem;
     text-align: left; }
 
+.contact__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none; }
+  .contact__list :not(:last-of-type) {
+    margin-right: 5rem; }
+
+.contact__icon--mail, .contact__icon--github {
+  width: 5rem;
+  height: 5rem; }
+
+.contact__email, .contact__github {
+  font-style: normal;
+  font-size: 1.6rem; }
+
+.contact__link:link, .contact__link:visited {
+  text-decoration: none;
+  display: inline-block;
+  backface-visibility: hidden;
+  transition: all .2s;
+  transform-origin: left;
+  display: inline-block;
+  background-image: linear-gradient(to left, #2196f3, #fd5f53);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; }
+
+.contact__link:hover, .contact__link:active {
+  transform: scale(1.1);
+  display: inline-block;
+  background-image: linear-gradient(to right, #2196f3, #fd5f53);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -240,10 +276,22 @@ p {
 .u-margin-top-xl {
   margin-top: 10rem !important; }
 
+.main-nav {
+  width: 100vw;
+  height: 5rem;
+  background-image: linear-gradient(#181818, rgba(24, 24, 24, 0.7) 80%, #1565c0 100%); }
+  .main-nav__list {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    list-style: none; }
+  .main-nav__item--1, .main-nav__item--2, .main-nav__item--3 {
+    color: #ececec; }
+
 .header {
   grid-column: main-start / main-end;
   max-width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 5rem);
   background-image: linear-gradient(to bottom right, rgba(21, 101, 192, 0.8), rgba(253, 95, 83, 0.7)), url(../vendors/img/hero-background.jpg);
   background-size: cover;
   background-position: center;
@@ -283,3 +331,41 @@ p {
   margin: 0 auto;
   text-align: center;
   padding: 5rem; }
+
+.sec-contact {
+  width: 114rem;
+  margin: 0 auto;
+  text-align: center; }
+
+.footer {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  padding-left: auto;
+  padding-right: auto;
+  background-image: linear-gradient(rgba(231, 231, 231, 0.9), rgba(24, 24, 24, 0.8) 15%, #181818); }
+  .footer__note {
+    width: 114rem;
+    margin: 0 auto;
+    color: #ececec;
+    word-spacing: .12rem; }
+  .footer__link:link, .footer__link:visited {
+    text-decoration: none;
+    color: #90CAF9;
+    transition: all .25s;
+    position: relative;
+    z-index: 1; }
+  .footer__link::before {
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .3s ease-in; }
+  .footer__link:hover, .footer__link:active {
+    color: #E93A2C; }
+  .footer__link:hover::before, .footer__link:active::before {
+    background-color: #96cfdd;
+    width: 100%;
+    z-index: -1; }

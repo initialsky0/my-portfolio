@@ -20,6 +20,14 @@
    <title>My Portfolio</title>
 </head>
 <body>
+   <nav class="main-nav">
+      <ul class="main-nav__list">
+         <li class="main-nav__item"><a href="#" class="main-nav__item--1">About Me</a></li>
+         <li class="main-nav__item"><a href="#" class="main-nav__item--2">My Works</a></li>
+         <li class="main-nav__item"><a href="#" class="main-nav__item--3">Contact</a></li>
+      </ul>
+   </nav>
+
    <header class="header">
       <h1 class="header__heading h-primary">
          Welcome to my portfolio <span class="h-primary--sub u-margin-top-s">Please check out my works!</span>
@@ -64,6 +72,41 @@
          </div>
       </div>
    </section>
+
+   <section class="sec-contact u-margin-bottom-l">
+      <h2 class="h-secondary">Contact me</h2>
+      <ul class="contact__list">
+         <li class="contact__item">
+            <svg class="contact__icon--mail">
+               <use xlink:href="./vendors/icon/mail-outline.svg#icon-mail"></use>
+            </svg>
+            <address class="contact__email">
+               Email: <a href="mailto:initialsky@protonmail.com" class="contact__link">initialsky@protonmail.com</a>
+            </address>
+         </li>
+         <li class="contact__item">
+            <svg class="contact__icon--github">
+               <use xlink:href="./vendors/icon/logo-github.svg#icon-github"></use>
+            </svg>
+            <div class="contact__github">
+               Github: <a href="https://github.com/initialsky0" class="contact__link">github.com/initialsky0</a>
+            </div>
+         </li>
+      </ul>
+   </section>
    
+   <footer class="footer">
+      <p class="footer__note">
+         This webpage is my personal portfolio, The design is inspired by some of the works listed above.
+         icons are from <a href="https://ionicons.com/" class="footer__link">ionicon</a>. The pictures are from 
+         <a href="https://unsplash.com/" class="footer__link">unsplash.com</a>. Background is 
+         <span>
+            photo by <a class="footer__link" href="https://unsplash.com/@joshuamphotography?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Josh Massey</a>
+         </span>. The 3 picture in About Me is <span>photo by <a class="footer__link" href="https://unsplash.com/@timothycdykes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Timothy Dykes</a></span>, 
+         <span><a class="footer__link" href="https://unsplash.com/@grohsfabian?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Fabian Grohs</a></span>, and 
+         <span><a class="footer__link" href="https://unsplash.com/@nasa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">NASA</a></span>.
+      </p>
+   </footer>
+
 </body>
 </html>

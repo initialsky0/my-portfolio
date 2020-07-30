@@ -144,7 +144,6 @@
 
 // Card ////////////////////////
 
-
 .card {
    display: flex;
    align-content: center;
@@ -161,5 +160,48 @@
       padding: 2.5rem;
       padding-right: 1.5rem;
       text-align: left;
+   }
+}
+
+// Contact ////////////////////////
+
+.contact {
+   &__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      :not(:last-of-type) { margin-right: 5rem; }
+   }
+
+   &__icon {
+      &--mail,
+      &--github {
+         width: 5rem;
+         height: 5rem;
+      }
+   }
+
+   &__email,
+   &__github {
+      font-style: normal;
+      font-size: $default-font-size;
+   }
+
+   &__link:link,
+   &__link:visited {
+      text-decoration: none;
+      display: inline-block;
+      backface-visibility: hidden;
+      transition: all .2s;
+      transform-origin: left;
+      @include gradient-font(linear-gradient(to left, rgba($color-primary, 1), rgba($color-secondary, 1)))
+
+   }
+
+   &__link:hover,
+   &__link:active {
+      transform: scale(1.1);
+      @include gradient-font(linear-gradient(to right, rgba($color-primary, 1), rgba($color-secondary, 1)))
    }
 }
