@@ -22,9 +22,9 @@
 <body>
    <nav class="main-nav">
       <ul class="main-nav__list">
-         <li class="main-nav__item"><a href="#" class="main-nav__item--1">About Me</a></li>
-         <li class="main-nav__item"><a href="#" class="main-nav__item--2">My Works</a></li>
-         <li class="main-nav__item"><a href="#" class="main-nav__item--3">Contact</a></li>
+         <li class="main-nav__item"><a href="#aboutme" class="main-nav__item--1">About Me</a></li>
+         <li class="main-nav__item"><a href="#works" class="main-nav__item--2">My Works</a></li>
+         <li class="main-nav__item"><a href="#contact" class="main-nav__item--3">Contact</a></li>
       </ul>
    </nav>
 
@@ -35,7 +35,7 @@
       <a href="#" class="btn btn--main header__btn">View My Works</a>
    </header>
 
-   <section class="sec-aboutme">
+   <section class="sec-aboutme" id="aboutme">
       <h2 class="sec-aboutme__heading h-secondary">About me</h2>
 
       <div class="aboutme-content">
@@ -54,7 +54,7 @@
       </div>
    </section>
 
-   <section class="sec-works u-margin-top-m">
+   <section class="sec-works u-margin-top-m" id="works">
       <h2 class="h-secondary">What I Worked on</h2>
       <div class="card">
          <div class="card__s1">
@@ -73,7 +73,7 @@
       </div>
    </section>
 
-   <section class="sec-contact u-margin-bottom-l">
+   <section class="sec-contact u-margin-bottom-l" id="contact">
       <h2 class="h-secondary">Contact me</h2>
       <ul class="contact__list">
          <li class="contact__item">
@@ -107,6 +107,12 @@
          <span><a class="footer__link" href="https://unsplash.com/@nasa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">NASA</a></span>.
       </p>
    </footer>
-
+   
+   <!-- JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollToPlugin.min.js"></script>
+   <script src="./vendors/js/scrollmagic-min/ScrollMagic.min.js"></script>
+   <script src="./vendors/js/scrollmagic-min/plugins/debug.addIndicators.min.js"></script>
+   <script src="./js/script.js"></script>
 </body>
 </html>

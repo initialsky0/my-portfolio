@@ -277,21 +277,41 @@ p {
   margin-top: 10rem !important; }
 
 .main-nav {
-  width: 100vw;
-  height: 5rem;
+  width: 100%;
+  height: 7rem;
   background-image: linear-gradient(#181818, rgba(24, 24, 24, 0.7) 80%, #1565c0 100%); }
   .main-nav__list {
-    height: 80%;
+    height: 85%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     list-style: none; }
+  .main-nav__item {
+    position: relative; }
+  .main-nav__item::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: -10%;
+    height: 0;
+    width: 120%;
+    border-radius: 2rem;
+    transition: all .3s;
+    background-image: linear-gradient(45deg, rgba(33, 150, 243, 0.7), rgba(253, 95, 83, 0.7)); }
+  .main-nav__item:hover::before {
+    height: 6.25rem; }
   .main-nav__item--1, .main-nav__item--2, .main-nav__item--3 {
-    color: #ececec; }
+    color: #ececec;
+    position: relative;
+    text-decoration: none;
+    font-size: 2.5rem;
+    z-index: 1; }
 
 .header {
   grid-column: main-start / main-end;
   max-width: 100vw;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 7rem);
   background-image: linear-gradient(to bottom right, rgba(21, 101, 192, 0.8), rgba(253, 95, 83, 0.7)), url(../vendors/img/hero-background.jpg);
   background-size: cover;
   background-position: center;
