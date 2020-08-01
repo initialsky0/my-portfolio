@@ -20,23 +20,23 @@
    <title>My Portfolio</title>
 </head>
 <body>
-   <nav class="main-nav">
-      <ul class="main-nav__list">
-         <li class="main-nav__item"><a href="#aboutme" class="main-nav__item--1">About Me</a></li>
-         <li class="main-nav__item"><a href="#works" class="main-nav__item--2">My Works</a></li>
-         <li class="main-nav__item"><a href="#contact" class="main-nav__item--3">Contact</a></li>
-      </ul>
-   </nav>
-
    <header class="header">
-      <h1 class="header__heading h-primary">
+      <nav class="main-nav">
+         <ul class="main-nav__list">
+            <li class="main-nav__item"><a href="#aboutme" class="main-nav__item--1">About Me</a></li>
+            <li class="main-nav__item"><a href="#works" class="main-nav__item--2">My Works</a></li>
+            <li class="main-nav__item"><a href="#contact" class="main-nav__item--3">Contact</a></li>
+         </ul>
+      </nav>
+      
+      <h1 class="header__heading header__animation h-primary">
          Welcome to my portfolio <span class="h-primary--sub u-margin-top-s">Please check out my works!</span>
       </h1>
-      <a href="#" class="btn btn--main header__btn">View My Works</a>
+      <a href="#works" class="btn btn--main header__btn">View My Works</a>
    </header>
 
    <section class="sec-aboutme" id="aboutme">
-      <h2 class="sec-aboutme__heading h-secondary">About me</h2>
+      <h2 class="sec-aboutme__heading h-secondary u-oppacity-0">About me</h2>
 
       <div class="aboutme-content">
          <p class="aboutme-content__text">
@@ -55,7 +55,23 @@
    </section>
 
    <section class="sec-works u-margin-top-m" id="works">
-      <h2 class="h-secondary">What I Worked on</h2>
+      <h2 class="h-secondary u-oppacity-0">What I Worked on</h2>
+      <div class="card">
+         <div class="card__s1">
+            <h3 class="h-tertiary">Title</h3>
+            <div class="card__img">img placeholder</div>
+         </div>
+         <div class="card__s2">
+            <p class="card__description">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+               Molestias eveniet, vitae magni amet similique ex sapiente, 
+               dolorum unde a quis repellat? Culpa iusto a dolor reprehenderit aliquid eaque, 
+               facere animi.
+            </p>
+            <a href="#" class="cta-btn cta-btn--red">cta</a>
+         </div>
+      </div>
+
       <div class="card">
          <div class="card__s1">
             <h3 class="h-tertiary">Title</h3>
@@ -74,7 +90,7 @@
    </section>
 
    <section class="sec-contact u-margin-bottom-l" id="contact">
-      <h2 class="h-secondary">Contact me</h2>
+      <h2 class="h-secondary u-oppacity-0">Contact me</h2>
       <ul class="contact__list">
          <li class="contact__item">
             <svg class="contact__icon--mail">
@@ -97,12 +113,12 @@
    
    <footer class="footer">
       <p class="footer__note">
-         This webpage is my personal portfolio, The design is inspired by some of the works listed above.
-         icons are from <a href="https://ionicons.com/" class="footer__link">ionicon</a>. The pictures are from 
+         This webpage is my personal portfolio, The design is inspired by some of the <a href="#works" class="footer__link footer__link--scroll">works</a> listed above.
+         Icons are from <a href="https://ionicons.com/" class="footer__link">ionicon</a>. The pictures are from 
          <a href="https://unsplash.com/" class="footer__link">unsplash.com</a>. Background is 
          <span>
             photo by <a class="footer__link" href="https://unsplash.com/@joshuamphotography?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Josh Massey</a>
-         </span>. The 3 picture in About Me is <span>photo by <a class="footer__link" href="https://unsplash.com/@timothycdykes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Timothy Dykes</a></span>, 
+         </span>. The 3 pictures in About Me is <span>photo by <a class="footer__link" href="https://unsplash.com/@timothycdykes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Timothy Dykes</a></span>, 
          <span><a class="footer__link" href="https://unsplash.com/@grohsfabian?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Fabian Grohs</a></span>, and 
          <span><a class="footer__link" href="https://unsplash.com/@nasa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">NASA</a></span>.
       </p>
