@@ -100,6 +100,29 @@ const scrollAnimationSlide = (controller, trigger, offset = 0) => {
    return {scene: scene, trigger: animeTrigger}
 }
 
+const controlRespMenu = () => {
+   const menu = document.querySelector(".main-nav");
+   const menuBtn = document.querySelector(".main-nav__btn");
+   const btnIconMenu = document.querySelector(".main-nav__icon--menu");
+   const btnIconClose = document.querySelector(".main-nav__icon--close");
+
+   menuBtn.addEventListener('click', () => {
+      if(btnIconClose.classList.contains("u-hidden")) {
+         // when Menu is clicked
+         setTimeout(()=> {
+            btnIconClose.classList.remove("u-hidden");
+            btnIconMenu.classList.add("u-hidden");
+         }, 500)
+      } else if(btnIconMenu.classList.contains("u-hidden")) {
+         // when Close is clicked
+         setTimeout(()=> {
+            btnIconMenu.classList.remove("u-hidden");
+            btnIconClose.classList.add("u-hidden");
+         }, 500)
+      }
+   });
+}
+
 const main = () => {
    let respSize = window.innerWidth;
    // holds the state for max window size for responsive container, used to update values for media queries.
@@ -110,6 +133,7 @@ const main = () => {
    defineNavLink(controller, ".footer__link--scroll", 59);
    defineNavLink(controller, ".header__btn", 59);
    [...document.querySelectorAll('.h-secondary')].forEach(heading => scrollAnimationSlide(controller, heading));
+   controlRespMenu();
    // window.addEventListener('scroll', event => {console.log(scene[0].scene.controller().info().scrollDirection)})
    // function to check for scroll direction
    // window.addEventListener("load", handleScreenSize(respSize, scene));

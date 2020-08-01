@@ -41,7 +41,7 @@
 .u-sticky { position: fixed; }
 
 // hide certain item
-.u-hidden { display: none; }
+.u-hidden { display: none !important; }
 
 // hide element for animation
 .u-oppacity-0 { opacity: 0; }

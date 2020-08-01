@@ -59,7 +59,7 @@
 ///////// About Me section ////////
 
 .sec-works {
-   width: $sec-default-width;
+   max-width: $sec-default-width;
    margin: 0 auto;
    text-align: center;
    padding: 5rem;
@@ -68,7 +68,7 @@
 ///////// Contact section ////////
 
 .sec-contact {
-   width: $sec-default-width;
+   max-width: $sec-default-width;
    margin: 0 auto;
    text-align: center;
 }
@@ -84,7 +84,7 @@
    background-image: linear-gradient(rgba($color-white-1, .9), rgba($color-black-1, .8) 15%, rgba($color-black-1, 1));
 
    &__note {
-      width: $sec-default-width;
+      max-width: $sec-default-width;
       margin: 0 auto;
       color: $font-tertiary;
       word-spacing: .12rem;
