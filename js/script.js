@@ -93,15 +93,74 @@ const scrollAnimationSlide = (controller, trigger, offset = 0) => {
       triggerHook: .95,
       offset: -offset
    })
-   .setClassToggle(animeTrigger, "animation__SlideIn")
+   .setClassToggle(animeTrigger, "animation__slideIn")
    // .addIndicators({trigger: "start"})
    .addTo(controller);
 
    return {scene: scene, trigger: animeTrigger}
 }
 
+const openMenu = (menu, menuList, menuBtn, btnIconMenu, btnIconClose) => {
+   // Menu animation control
+   if(menuList.classList.contains("animation__slideUp" || menuList.classList.contains("u-hidden"))) {
+      menuList.classList.remove("animation__slideUp", "u-hidden");
+      menu.classList.remove("animation__menuUp");
+   }
+   menu.classList.add("animation__menuDown");
+   menuList.classList.add("animation__slideDown");
+
+   // Button animation control
+   menuBtn.classList.add("animation__flipBtn");
+   setTimeout(()=> {
+      btnIconClose.classList.remove("u-hidden");
+      btnIconMenu.classList.add("u-hidden");
+   }, 150);
+   menuBtn.addEventListener(
+      'animationend', 
+      () => menuBtn.classList.remove("animation__flipBtn"),
+      { once: true }
+   );
+}
+
+const closeMenu = (menu, menuList, menuBtn, btnIconMenu, btnIconClose) => {
+   // Menu animation control
+   if(menuList.classList.contains("animation__slideDown")) {
+      menuList.classList.remove("animation__slideDown");
+      menu.classList.remove("animation__menuDown");
+   }
+   menu.classList.add("animation__menuUp");
+   menuList.classList.add("animation__slideUp");
+   menuList.addEventListener(
+      'animationend', 
+      () => menuList.classList.add("u-hidden"), 
+      { once: true }
+   );
+   
+   // Button animation control
+   menuBtn.classList.add("animation__flipBtn");
+   setTimeout(()=> {
+      btnIconMenu.classList.remove("u-hidden");
+      btnIconClose.classList.add("u-hidden");
+   }, 150);
+   menuBtn.addEventListener(
+      'animationend', 
+      () => menuBtn.classList.remove("animation__flipBtn"), 
+      { once: true }
+   );
+}
+
+const menuCloseSel = (menu, menuList, menuBtn, btnIconMenu, btnIconClose) => {
+   const navList = document.querySelector(".main-nav__list").children;
+   [...navList].forEach(li => li.addEventListener("click", () => {
+      if(window.innerWidth <= 900){
+         closeMenu(menu, menuList, menuBtn, btnIconMenu, btnIconClose);
+      }
+   }));
+}
+
 const controlRespMenu = () => {
    const menu = document.querySelector(".main-nav");
+   const menuList = document.querySelector(".main-nav__list");
    const menuBtn = document.querySelector(".main-nav__btn");
    const btnIconMenu = document.querySelector(".main-nav__icon--menu");
    const btnIconClose = document.querySelector(".main-nav__icon--close");
@@ -109,18 +168,31 @@ const controlRespMenu = () => {
    menuBtn.addEventListener('click', () => {
       if(btnIconClose.classList.contains("u-hidden")) {
          // when Menu is clicked
-         setTimeout(()=> {
-            btnIconClose.classList.remove("u-hidden");
-            btnIconMenu.classList.add("u-hidden");
-         }, 500)
+         openMenu(menu, menuList, menuBtn, btnIconMenu, btnIconClose);
+         
       } else if(btnIconMenu.classList.contains("u-hidden")) {
          // when Close is clicked
-         setTimeout(()=> {
-            btnIconMenu.classList.remove("u-hidden");
-            btnIconClose.classList.add("u-hidden");
-         }, 500)
+         closeMenu(menu, menuList, menuBtn, btnIconMenu, btnIconClose);
       }
    });
+
+   menuCloseSel(menu, menuList, menuBtn, btnIconMenu, btnIconClose);
+}
+
+const handleScreenSize = (respSize, scene) => (event) => {
+   // callback for handling content duration of animation when window resized or loaded
+   const currentSize = event.currentTarget.innerWidth;
+
+   if (respSize !==1200 && currentSize >=1200) {
+      return 1200;
+      } else if(respSize !== 900 && currentSize >= 900 && currentSize < 1200) {
+         return 900;
+         } else if(respSize !== 600 && currentSize >= 600 && currentSize < 900) {
+            // when nav menu change
+            return 600;
+            } else if(respSize !== 0 && currentSize >= 0 && currentSize < 600) {
+               return 0;
+               } else { return respSize; }
 }
 
 const main = () => {
@@ -135,10 +207,9 @@ const main = () => {
    [...document.querySelectorAll('.h-secondary')].forEach(heading => scrollAnimationSlide(controller, heading));
    controlRespMenu();
    // window.addEventListener('scroll', event => {console.log(scene[0].scene.controller().info().scrollDirection)})
-   // function to check for scroll direction
-   // window.addEventListener("load", handleScreenSize(respSize, scene));
-   // window.addEventListener("resize", handleScreenSize(respSize, scene));
-
+   // statement to check for scroll direction
+   window.addEventListener("load", event => { respSize = handleScreenSize(respSize, scene)(event) });
+   window.addEventListener("resize", event => { respSize = handleScreenSize(respSize, scene)(event) });
 }
 
 // equivalent to ready()
