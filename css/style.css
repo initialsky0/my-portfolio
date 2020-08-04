@@ -31,6 +31,12 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 57.5%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Lato", sans-serif;
@@ -44,11 +50,19 @@ body {
   font-size: 6.5rem;
   font-weight: 400;
   letter-spacing: 1rem; }
+  @media only screen and (max-width: 37.5em) {
+    .h-primary {
+      font-size: 5rem;
+      letter-spacing: .5rem; } }
   .h-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: .6rem; }
+    @media only screen and (max-width: 37.5em) {
+      .h-primary--sub {
+        font-size: 1.5rem;
+        letter-spacing: .3rem; } }
 
 .h-secondary {
   display: inline-block;
@@ -66,12 +80,19 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent; }
+  @media only screen and (max-width: 37.5em) {
+    .h-secondary {
+      font-size: 2.5rem;
+      letter-spacing: 0rem; } }
 
 .h-tertiary {
   display: inline-block;
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 400; }
+  @media only screen and (max-width: 37.5em) {
+    .h-tertiary {
+      font-size: 2rem; } }
 
 p {
   font-size: 1.5rem; }
@@ -80,7 +101,7 @@ p {
   10% {
     transform: scale(0.85, 1.05);
     background-color: #E93A2C; }
-  75% {
+  55% {
     transform: scale(1.2, 0.95);
     background-color: #FF8076; }
   100% {
@@ -119,7 +140,7 @@ p {
 
 @keyframes menuDown {
   0% {
-    height: 6rem; }
+    height: 60px; }
   100% {
     height: 18rem; } }
 
@@ -133,7 +154,7 @@ p {
   0% {
     height: 18rem; }
   100% {
-    height: 6rem; } }
+    height: 60px; } }
 
 @keyframes flipBtn {
   0% {
@@ -149,6 +170,12 @@ p {
   height: 6rem;
   background-image: linear-gradient(#181818, rgba(24, 24, 24, 0.7) 80%, #1565c0 100%);
   z-index: 10; }
+  @media only screen and (max-width: 56.25em) {
+    .main-nav {
+      height: 6.5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .main-nav {
+      height: 7.5rem; } }
   .main-nav__list {
     height: 85%;
     display: flex;
@@ -163,19 +190,21 @@ p {
   .main-nav__item {
     position: relative;
     padding: 0 1.5rem; }
-  .main-nav__item::before {
+  .main-nav__item--1::before, .main-nav__item--2::before, .main-nav__item--3::before {
     display: inline-block;
     content: "";
     position: absolute;
-    top: -0.5rem;
-    left: 0;
+    top: -.5rem;
+    left: -1.25rem;
     height: 0;
-    width: 100%;
+    width: calc(100% + 2.5rem);
     border-radius: 2rem;
     transition: all .3s;
+    z-index: -1;
     background-image: linear-gradient(45deg, rgba(33, 150, 243, 0.7), rgba(253, 95, 83, 0.7)); }
-  .main-nav__item:hover::before {
-    height: 5rem; }
+  .main-nav__item--1:hover::before, .main-nav__item--2:hover::before, .main-nav__item--3:hover::before {
+    padding: 2.1rem 0;
+    height: 100%; }
   .main-nav__item--1, .main-nav__item--2, .main-nav__item--3 {
     color: #ececec;
     position: relative;
@@ -318,7 +347,7 @@ p {
   .card__s1, .card__s2 {
     padding: 2rem;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-    flex: 0 1 30%; }
+    flex: 0 1 35%; }
   .card__description {
     padding: 2.5rem;
     padding-right: 1.5rem;
@@ -465,7 +494,7 @@ p {
   max-width: 114rem;
   margin: 0 auto;
   text-align: center;
-  padding: 5rem; }
+  padding: 2rem 5rem; }
 
 .sec-contact {
   max-width: 114rem;

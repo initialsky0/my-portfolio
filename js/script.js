@@ -102,12 +102,13 @@ const scrollAnimationSlide = (controller, trigger, offset = 0) => {
 
 const openMenu = (menu, menuList, menuBtn, btnIconMenu, btnIconClose) => {
    // Menu animation control
-   if(menuList.classList.contains("animation__slideUp" || menuList.classList.contains("u-hidden"))) {
-      menuList.classList.remove("animation__slideUp", "u-hidden");
+   if(menuList.classList.contains("animation__slideUp")) {
+      menuList.classList.remove("animation__slideUp");
       menu.classList.remove("animation__menuUp");
    }
    menu.classList.add("animation__menuDown");
    menuList.classList.add("animation__slideDown");
+   menuList.classList.remove("u-hidden");
 
    // Button animation control
    menuBtn.classList.add("animation__flipBtn");
@@ -179,37 +180,81 @@ const controlRespMenu = () => {
    menuCloseSel(menu, menuList, menuBtn, btnIconMenu, btnIconClose);
 }
 
-const handleScreenSize = (respSize, scene) => (event) => {
+const resetNavBtn = () => {
+   const btnIconMenu = document.querySelector(".main-nav__icon--menu");
+   const btnIconClose = document.querySelector(".main-nav__icon--close");
+   if(btnIconMenu.classList.contains("u-hidden")) {
+      btnIconClose.classList.add("u-hidden");
+      btnIconMenu.classList.remove("u-hidden");
+   }
+}
+
+const resetNav = () => {
+   const menu = document.querySelector(".main-nav");
+   const menuList = document.querySelector(".main-nav__list");
+
+   // Remove all animation or hidden class
+   menu.classList.remove("animation__menuDown", "animation__menuUp");
+   menuList.classList.remove("animation__slideDown", "animation__slideUp", "u-hidden");
+}
+
+const handleScreenSize = (respSize, scene = []) => (event) => {
    // callback for handling content duration of animation when window resized or loaded
    const currentSize = event.currentTarget.innerWidth;
 
    if (respSize !==1200 && currentSize >=1200) {
+      // 1200 and up
+      // handle navigation menu change due to resize
+      if(respSize <= 600) { resetNav(); }
       return 1200;
+
       } else if(respSize !== 900 && currentSize >= 900 && currentSize < 1200) {
+         //between 1200 and 900
+         // handle navigation menu change due to resize
+         if(respSize <= 600) { resetNav(); }
          return 900;
+
          } else if(respSize !== 600 && currentSize >= 600 && currentSize < 900) {
-            // when nav menu change
+            // between 600 and 900, when nav menu change
+            // handle navigation menu change due to resize
+            if(respSize >= 900) {
+               resetNavBtn();
+               document.querySelector(".main-nav__list").classList.add("u-hidden");
+               }
             return 600;
+
             } else if(respSize !== 0 && currentSize >= 0 && currentSize < 600) {
+               // less then 600
+               // handle navigation menu change due to resize
+               if(respSize >= 900) {
+                  resetNavBtn();
+                  document.querySelector(".main-nav__list").classList.add("u-hidden");
+                  }
                return 0;
+
                } else { return respSize; }
 }
 
 const main = () => {
    let respSize = window.innerWidth;
    // holds the state for max window size for responsive container, used to update values for media queries.
-   const scene = [];
    const controller = new ScrollMagic.Controller();
-   scene.push(pinNav(controller));
+   pinNav(controller);
    defineNavLink(controller, ".main-nav__list", 59);
    defineNavLink(controller, ".footer__link--scroll", 59);
    defineNavLink(controller, ".header__btn", 59);
    [...document.querySelectorAll('.h-secondary')].forEach(heading => scrollAnimationSlide(controller, heading));
    controlRespMenu();
    // window.addEventListener('scroll', event => {console.log(scene[0].scene.controller().info().scrollDirection)})
-   // statement to check for scroll direction
-   window.addEventListener("load", event => { respSize = handleScreenSize(respSize, scene)(event) });
-   window.addEventListener("resize", event => { respSize = handleScreenSize(respSize, scene)(event) });
+   // statement to check for scroll direction, not used for this project
+   window.addEventListener("load", event => {
+      respSize = handleScreenSize(respSize)(event);
+      if(respSize <= 600) {
+         resetNavBtn();
+         document.querySelector(".main-nav__list").classList.add("u-hidden");
+      }
+   });
+   window.addEventListener("resize", event => { respSize = handleScreenSize(respSize)(event) });
 }
 
 // equivalent to ready()

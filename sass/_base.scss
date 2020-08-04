@@ -11,6 +11,9 @@ html {
    box-sizing: border-box;
    // 10 / 16 -> 62.5% (1rem = 10px)
    font-size: 62.5%;
+
+   @include respond(tab-port) { font-size: 57.5%; }
+   @include respond(phone) { font-size: 50%; }
 }
 
 body {
