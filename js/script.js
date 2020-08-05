@@ -202,19 +202,19 @@ const handleScreenSize = (respSize, scene = []) => (event) => {
    // callback for handling content duration of animation when window resized or loaded
    const currentSize = event.currentTarget.innerWidth;
 
-   if (respSize !==1200 && currentSize >=1200) {
+   if (respSize !==1200 && currentSize > 1200) {
       // 1200 and up
       // handle navigation menu change due to resize
       if(respSize <= 600) { resetNav(); }
       return 1200;
 
-      } else if(respSize !== 900 && currentSize >= 900 && currentSize < 1200) {
+      } else if(respSize !== 900 && currentSize > 900 && currentSize <= 1200) {
          //between 1200 and 900
          // handle navigation menu change due to resize
          if(respSize <= 600) { resetNav(); }
          return 900;
 
-         } else if(respSize !== 600 && currentSize >= 600 && currentSize < 900) {
+         } else if(respSize !== 600 && currentSize > 600 && currentSize <= 900) {
             // between 600 and 900, when nav menu change
             // handle navigation menu change due to resize
             if(respSize >= 900) {
@@ -223,7 +223,7 @@ const handleScreenSize = (respSize, scene = []) => (event) => {
                }
             return 600;
 
-            } else if(respSize !== 0 && currentSize >= 0 && currentSize < 600) {
+            } else if(respSize !== 0 && currentSize > 0 && currentSize <= 600) {
                // less then 600
                // handle navigation menu change due to resize
                if(respSize >= 900) {

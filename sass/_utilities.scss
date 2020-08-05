@@ -29,7 +29,13 @@
 .u-margin-top-s { margin-top: 2rem !important; }
 
 // margin-top medium 4rem
-.u-margin-top-m { margin-top: 4rem !important; }
+.u-margin-top-m {
+   margin-top: 4rem !important;
+   
+   @include respond(tab-port) {
+      margin-bottom: 2rem !important;
+   }
+}
 
 // margin-top large 8rem
 .u-margin-top-l { margin-top: 8rem !important; }

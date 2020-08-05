@@ -191,6 +191,15 @@
    // height: 0 to make gallery section cover by image only, mainly used for hover effect
    height: 0;
 
+   @include respond(tab-port) {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      height: auto;
+   }
+
+   @include respond(phone) { flex-direction: column; }
+
    & > * { transition: all .3s ease-out; }
 
    &__img--1 {
@@ -199,6 +208,8 @@
       top: 3rem;
       left: 4.5rem;
       box-shadow: 0 .2rem 3rem rgba($color-black, .15);
+
+      @include respond(tab-land) { top: 5rem; }
 
       &:hover {
          transform: scale(1.15);
@@ -214,6 +225,8 @@
       right: -2rem;
       box-shadow: 0 .2rem 3rem rgba($color-black, .2);
 
+      @include respond(tab-land) { top: 8rem; }
+
       &:hover {
          transform: scale(1.1);
          box-shadow: 0 .6rem 5rem rgba($color-black, .4);
@@ -228,15 +241,42 @@
       left: 15rem;
       box-shadow: 0 .3rem 4rem rgba($color-black, .3);
 
+      @include respond(tab-land) {
+         top: 20rem;
+         left: 13rem;
+      }
+
       &:hover {
          transform: scale(1.1);
          box-shadow: 0 .6rem 5rem rgba($color-black, .5);
          z-index: 1;
+
+         @include respond(phone) { box-shadow: 0 .6rem 2rem rgba($color-black, .5); }
       }
+   }
+
+   &__img--1,
+   &__img--2,
+   &__img--3 {
+      @include respond(tab-port) {
+         max-width: 30%;
+         object-fit: cover;
+         display: inline-block;
+         position: relative;
+         top: 0;
+         left: 0;
+      }
+
+      @include respond(phone) {
+         max-width: 50%;
+         margin-bottom: 2.5rem;
+      }
+
    }
 
    &:hover *:not(:hover) {
       transform: scale(.9);
+      @include respond(phone) { transform: scale(1); }
    }
 }
 
@@ -247,6 +287,8 @@
    align-content: center;
    justify-content: center;
 
+   @include respond(tab-port) { flex-direction: column; }
+
    &:not(:last-of-type) { margin-bottom: 5rem; }
 
    &__s1,
@@ -254,6 +296,11 @@
       padding: 2rem;
       box-shadow: 0 1rem 2rem rgba($color-black, .15);
       flex: 0 1 35%;
+
+      @include respond(tab-port) {
+         flex: auto;
+         box-shadow: 0 .5rem 2.5rem rgba($color-black, .1);
+      }
    }
 
    &__description {
@@ -272,6 +319,17 @@
       justify-content: center;
       list-style: none;
       :not(:last-of-type) { margin-right: 5rem; }
+
+      @include respond(phone) {
+         :not(:last-of-type){
+            margin: {
+               top: 0;
+               bottom: 3rem;
+               right: 0;
+            }
+         }
+         flex-direction: column;
+      }
    }
 
    &__icon {
