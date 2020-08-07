@@ -46,4 +46,7 @@
    @include respond(phone) { font-size: 2rem; }
 }
 
-p { font-size: 1.5rem; }
+p {
+   text-indent: 2rem;
+   font-size: 1.5rem;
+}

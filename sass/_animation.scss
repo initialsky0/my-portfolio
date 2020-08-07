@@ -1,6 +1,21 @@
-@keyframes elasticalTouch {
+@keyframes elasticalTouchBlue {
    10% {
-      transform: scale(.85, 1.05);
+      transform: scale(.8, 1.2);
+      background-color: $color-primary-dark;
+   }
+   55% {
+      transform: scale(1.2, .95);
+      background-color: $color-primary-light;
+   }
+   100% {
+      transform: scale(1);
+      background-color: $color-primary;
+   }
+}
+
+@keyframes elasticalTouchRed {
+   10% {
+      transform: scale(.8, 1.2);
       background-color: $color-secondary-dark;
    }
    55% {

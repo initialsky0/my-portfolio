@@ -49,14 +49,15 @@
    margin-top: -1rem;
    text-align: left;
    display: flex;
-   height: 45rem;
+   height: auto;
 
    @include respond(tab-port) {
       flex-direction: column;
       align-items: center;
+      margin-bottom: 1.5rem;
    }
 
-   @include respond(phone) { height: auto; }
+   @include respond(phone) { margin-bottom: 0; }
 
    &__text {
       padding: 3rem;

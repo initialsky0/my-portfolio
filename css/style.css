@@ -95,11 +95,23 @@ body {
       font-size: 2rem; } }
 
 p {
+  text-indent: 2rem;
   font-size: 1.5rem; }
 
-@keyframes elasticalTouch {
+@keyframes elasticalTouchBlue {
   10% {
-    transform: scale(0.85, 1.05);
+    transform: scale(0.8, 1.2);
+    background-color: #1565C0; }
+  55% {
+    transform: scale(1.2, 0.95);
+    background-color: #90CAF9; }
+  100% {
+    transform: scale(1);
+    background-color: #2196F3; } }
+
+@keyframes elasticalTouchRed {
+  10% {
+    transform: scale(0.8, 1.2);
     background-color: #E93A2C; }
   55% {
     transform: scale(1.2, 0.95);
@@ -288,7 +300,6 @@ p {
   transition: transform .2s, box-shadow .2s; }
 
 .cta-btn:hover {
-  animation: elasticalTouch 0.7s cubic-bezier(0.99, -0.09, 0.55, 1.2);
   box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2); }
 
 .cta-btn:active {
@@ -296,12 +307,19 @@ p {
   transform: translateY(0.3rem);
   box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.25); }
 
+.cta-btn--blue {
+  background-color: #2196F3; }
+  .cta-btn--blue:hover {
+    animation: elasticalTouchBlue 0.7s cubic-bezier(0.99, -0.09, 0.55, 1.2); }
+
 .cta-btn--red {
   background-color: #FD5F53; }
+  .cta-btn--red:hover {
+    animation: elasticalTouchRed 0.7s cubic-bezier(0.99, -0.09, 0.55, 1.2); }
 
 .gallery {
   position: relative;
-  flex: 0 0 55%;
+  flex: 0 0 50%;
   height: 0; }
   @media only screen and (max-width: 56.25em) {
     .gallery {
@@ -317,7 +335,7 @@ p {
   .gallery__img--1 {
     width: 50%;
     position: absolute;
-    top: 3rem;
+    top: 4rem;
     left: 4.5rem;
     box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.15); }
     @media only screen and (max-width: 75em) {
@@ -385,6 +403,10 @@ p {
   .card:not(:last-of-type) {
     margin-bottom: 5rem; }
   .card__s1, .card__s2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     padding: 2rem;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
     flex: 0 1 35%; }
@@ -392,7 +414,12 @@ p {
       .card__s1, .card__s2 {
         flex: auto;
         box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.1); } }
+  .card__fig {
+    margin: 2.5rem 0; }
+  .card__img {
+    max-width: 27.5rem; }
   .card__description {
+    margin-top: 1.5rem;
     padding: 2.5rem;
     padding-right: 1.5rem;
     text-align: left; }
@@ -542,14 +569,15 @@ p {
   margin-top: -1rem;
   text-align: left;
   display: flex;
-  height: 45rem; }
+  height: auto; }
   @media only screen and (max-width: 56.25em) {
     .aboutme-content {
       flex-direction: column;
-      align-items: center; } }
+      align-items: center;
+      margin-bottom: 1.5rem; } }
   @media only screen and (max-width: 37.5em) {
     .aboutme-content {
-      height: auto; } }
+      margin-bottom: 0; } }
   .aboutme-content__text {
     padding: 3rem;
     align-self: center; }
