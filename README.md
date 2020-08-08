@@ -14,3 +14,4 @@ About me images #1: Robber Duck, From unsplash.com, photo by Timothy Dykes
 About me images #2: Work space, From unsplash.com, photo by Fabian Grohs   
 About me images #3: Earth, From unsplash.com, photo by NASA   
 Icons: ionicons
+Scroll effect: Scroll magic
