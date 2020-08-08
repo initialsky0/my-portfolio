@@ -96,6 +96,7 @@
    background-image: linear-gradient(rgba($color-white-1, .9), rgba($color-black-1, .8) 15%, rgba($color-black-1, 1));
 
    &__note {
+      padding: 0 2.5rem;
       max-width: $sec-default-width;
       margin: 0 auto;
       color: $font-tertiary;
