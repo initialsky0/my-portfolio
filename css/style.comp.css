@@ -341,6 +341,9 @@ p {
     @media only screen and (max-width: 75em) {
       .gallery__img--1 {
         top: 5rem; } }
+    @media only screen and (max-width: 62.5em) {
+      .gallery__img--1 {
+        top: 6.5rem; } }
     .gallery__img--1:hover {
       transform: scale(1.15);
       box-shadow: 0 0.6rem 4rem rgba(0, 0, 0, 0.3);
