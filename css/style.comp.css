@@ -428,25 +428,31 @@ p {
     text-align: left; }
 
 .contact__list {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   list-style: none; }
-  .contact__list :not(:last-of-type) {
-    margin-right: 5rem; }
+  @media only screen and (max-width: 75em) {
+    .contact__list {
+      grid-template-columns: repeat(2, 1fr); }
+      .contact__list > :last-child {
+        grid-column: 1 / -1;
+        margin-top: 5rem; } }
   @media only screen and (max-width: 37.5em) {
     .contact__list {
-      flex-direction: column; }
-      .contact__list :not(:last-of-type) {
+      grid-template-columns: 1fr; }
+      .contact__list > :last-child {
+        margin: 0; }
+      .contact__list > :not(:last-child) {
         margin-top: 0;
-        margin-bottom: 3rem;
+        margin-bottom: 3.5rem;
         margin-right: 0; } }
 
-.contact__icon--mail, .contact__icon--github {
+.contact__icon--mail, .contact__icon--github, .contact__icon--linkedin {
   width: 5rem;
   height: 5rem; }
 
-.contact__email, .contact__github {
+.contact__email, .contact__github, .contact__linkedin {
   font-style: normal;
   font-size: 1.6rem; }
 
